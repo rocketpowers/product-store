@@ -28,6 +28,11 @@ public class ProductController {
 
     }
 
-
+    // Filtrar produtos
+    @RequestMapping(value="/products/{code}", method=RequestMethod.GET)
+    public @ResponseBody ProductModel filter(@PathVariable Integer code) {
+        return actions.findByCode(code);
+    }
+    
 
 }
