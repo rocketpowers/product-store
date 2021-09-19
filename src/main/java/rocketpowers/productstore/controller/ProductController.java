@@ -33,6 +33,11 @@ public class ProductController {
     public @ResponseBody ProductModel filter(@PathVariable Integer code) {
         return actions.findByCode(code);
     }
-    
+    // Alterproducts
+    @RequestMapping(value="/products", method=RequestMethod.PUT)
+    public @ResponseBody ProductModel alter(@RequestBody ProductModel product) {
+        return actions.save(product);
+    }
+
 
 }
